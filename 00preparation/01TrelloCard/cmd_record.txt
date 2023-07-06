@@ -1,0 +1,42 @@
+clang-13 -ffunction-sections -fdata-sections -lm -O3 -c -o main.o main.c
+
+llvm-objdump-13 -h main.o
+
+clang-13 -Wl,--gc-sections -o main main.o -lm
+   ***will let linker handle the entry point, for a standard C program starts, execution begins at a special startup function (often called _start) provided by the C runtime library (often called libc). This startup function initializes the C runtime (e.g., setting up standard I/O, initializing global variables) and then calls main
+   
+clang-13 -Wl,--gc-sections -o main main.o -lm -e main
+   ***explicity set the entry point, this is typically used in system-level programming, such as when writing an operating system kernel or a bootloader, where there's no standard C library setup
+   
+   
+llvm-nm-13 main
+Use nm to list the symbols in your program
+
+llvm-objdump-13 -T main
+Use -T to list the dynamic symbol table
+
+llvm-ar rcs libfuncs.a testlib.o
+The command ar rcs libfuncs.a lib.o is used to create a static library. The arguments rcs are options for the ar command:
+
+r: This option tells ar to replace existing files in the archive. If the archive does not exist, ar will create one.
+
+c: This option tells ar to create the archive. If the archive already exists, this option has no effect. On some systems, if you do not specify c and the archive does not exist, ar will report an error.
+
+s: This option tells ar to create an object file index in the archive. The index is a table that lists all the symbols defined by archive members that are relocatable object files. Creating an index can make linking to the archive much faster. 
+
+clang-13 -ffunction-sections -fdata-sections -c -o main.o main.c
+clang-13 -Wl,--gc-sections -o main main.o -L. -lfuncs -lm
+
+
+
+========== GCC version ======================0
+gcc -ffunction-sections -fdata-sections -c -o main.o main.c
+gcc -ffunction-sections -fdata-sections -c -o testlib.o testlib.c
+ar rcs libfuncs.a testlib.o
+
+gcc -Wl,--gc-sections -o main main.o -L. -lfuncs -lm
+(gdb) set logging file mappings.txt
+(gdb) set logging on
+(gdb) info proc mappings
+(gdb) set logging off
+

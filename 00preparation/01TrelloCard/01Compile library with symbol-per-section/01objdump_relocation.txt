@@ -1,0 +1,23 @@
+
+main.o:	file format ELF64-x86-64
+
+RELOCATION RECORDS FOR [.text.set_var]:
+0000000000000002 R_X86_64_PLT32 ceilf-0x4
+000000000000000e R_X86_64_PC32 gVar-0x4
+
+RELOCATION RECORDS FOR [.text.main]:
+000000000000000e R_X86_64_PC32 gVar-0x4
+0000000000000016 R_X86_64_PC32 .LCPI1_0-0x4
+000000000000001b R_X86_64_32 .rodata.str1.1
+0000000000000022 R_X86_64_PLT32 printf-0x4
+
+RELOCATION RECORDS FOR [.eh_frame]:
+0000000000000020 R_X86_64_PC32 .text.set_var
+0000000000000038 R_X86_64_PC32 .text.main
+
+explaination
+The R_X86_64_PLT32 and R_X86_64_PC32 in the entries are types of relocations specific to the x86-64 architecture. Here's a brief description of what these types mean:
+
+R_X86_64_PLT32 is used for 32-bit relative calls and jumps to an external symbol via the Procedure Linkage Table (PLT).
+R_X86_64_PC32 is used for 32-bit relative addressing to a symbol.
+For example, the entry 0000000000000002 R_X86_64_PLT32 ceilf-0x4 in the .text.set_var section says that at offset 0x2 in the .text.set_var section, there is a reference to the function ceilf that needs to be patched to point to the actual address where ceilf is loaded in memory. The -0x4 is the addend that needs to be subtracted from the final address to get the correct value to insert at the offset.

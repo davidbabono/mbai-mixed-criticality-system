@@ -1,0 +1,18 @@
+
+main:	file format elf64-x86-64
+
+DYNAMIC SYMBOL TABLE:
+0000000000000000      DF *UND*	0000000000000000 printf
+0000000000000000      DF *UND*	0000000000000000 __libc_start_main
+0000000000000000  w   D  *UND*	0000000000000000 __gmon_start__
+0000000000000000      DF *UND*	0000000000000000 ceil
+
+
+Explaination
+The __gmon_start__ symbol is used by the gmon profiling library. It is part of the GNU profiling system, gprof.
+
+When a program is compiled with the -pg option, it includes calls to the profiling library's monitoring functions. One of these is __gmon_start__, which is called at the start of the program, just before main(). This function initializes the profiling system. However, if you didn't compile your program with -pg, the __gmon_start__ symbol will be undefined.
+
+The reason you see it marked as w (weak) and *UND* (undefined) is that the dynamic linker includes a weak undefined reference to __gmon_start__ by default. This is so that if you do link with the profiling library, the symbol will be resolved to the library's function. If you don't link with the profiling library, the weak undefined reference has no effect.
+
+So the appearance of __gmon_start__ doesn't necessarily mean your program is using gprof or has been compil

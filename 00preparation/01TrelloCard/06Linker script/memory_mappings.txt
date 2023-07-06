@@ -1,0 +1,32 @@
+process 835806
+Mapped address spaces:
+
+          Start Addr           End Addr       Size     Offset objfile
+            0x400000           0x401000     0x1000        0x0 main
+            0x401000           0x402000     0x1000     0x1000 main
+            0x402000           0x403000     0x1000     0x2000 main
+            0x403000           0x404000     0x1000     0x2000 main
+            0x404000           0x405000     0x1000     0x3000 main
+      0x7ffff7c65000     0x7ffff7c68000     0x3000        0x0 
+      0x7ffff7c68000     0x7ffff7c8a000    0x22000        0x0 /lib/x86_64-linux-gnu/libc-2.31.so
+      0x7ffff7c8a000     0x7ffff7e02000   0x178000    0x22000 /lib/x86_64-linux-gnu/libc-2.31.so
+      0x7ffff7e02000     0x7ffff7e50000    0x4e000   0x19a000 /lib/x86_64-linux-gnu/libc-2.31.so
+      0x7ffff7e50000     0x7ffff7e54000     0x4000   0x1e7000 /lib/x86_64-linux-gnu/libc-2.31.so
+      0x7ffff7e54000     0x7ffff7e56000     0x2000   0x1eb000 /lib/x86_64-linux-gnu/libc-2.31.so
+      0x7ffff7e56000     0x7ffff7e5a000     0x4000        0x0 
+      0x7ffff7e5a000     0x7ffff7e67000     0xd000        0x0 /lib/x86_64-linux-gnu/libm-2.31.so
+      0x7ffff7e67000     0x7ffff7f0e000    0xa7000     0xd000 /lib/x86_64-linux-gnu/libm-2.31.so
+      0x7ffff7f0e000     0x7ffff7fa7000    0x99000    0xb4000 /lib/x86_64-linux-gnu/libm-2.31.so
+      0x7ffff7fa7000     0x7ffff7fa8000     0x1000   0x14c000 /lib/x86_64-linux-gnu/libm-2.31.so
+      0x7ffff7fa8000     0x7ffff7fa9000     0x1000   0x14d000 /lib/x86_64-linux-gnu/libm-2.31.so
+      0x7ffff7fa9000     0x7ffff7fab000     0x2000        0x0 
+      0x7ffff7fcb000     0x7ffff7fce000     0x3000        0x0 [vvar]
+      0x7ffff7fce000     0x7ffff7fcf000     0x1000        0x0 [vdso]
+      0x7ffff7fcf000     0x7ffff7fd0000     0x1000        0x0 /lib/x86_64-linux-gnu/ld-2.31.so
+      0x7ffff7fd0000     0x7ffff7ff3000    0x23000     0x1000 /lib/x86_64-linux-gnu/ld-2.31.so
+      0x7ffff7ff3000     0x7ffff7ffb000     0x8000    0x24000 /lib/x86_64-linux-gnu/ld-2.31.so
+      0x7ffff7ffc000     0x7ffff7ffd000     0x1000    0x2c000 /lib/x86_64-linux-gnu/ld-2.31.so
+      0x7ffff7ffd000     0x7ffff7ffe000     0x1000    0x2d000 /lib/x86_64-linux-gnu/ld-2.31.so
+      0x7ffff7ffe000     0x7ffff7fff000     0x1000        0x0 
+      0x7ffffffdd000     0x7ffffffff000    0x22000        0x0 [stack]
+  0xffffffffff600000 0xffffffffff601000     0x1000        0x0 [vsyscall]

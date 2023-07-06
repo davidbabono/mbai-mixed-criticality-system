@@ -1,0 +1,44 @@
+0000000000403e10 d _DYNAMIC
+0000000000404000 d _GLOBAL_OFFSET_TABLE_
+000000000040215c r __FRAME_END__
+0000000000402014 r __GNU_EH_FRAME_HDR
+0000000000404028 D __TMC_END__
+0000000000404028 B __bss_start
+0000000000401100 t __do_global_dtors_aux
+0000000000403e08 d __do_global_dtors_aux_fini_array_entry
+0000000000403e00 d __frame_dummy_init_array_entry
+                 w __gmon_start__
+0000000000403e08 d __init_array_end
+0000000000403e00 d __init_array_start
+0000000000401230 T __libc_csu_fini
+00000000004011c0 T __libc_csu_init
+                 U __libc_start_main@@GLIBC_2.2.5
+0000000000401080 T _dl_relocate_static_pie
+0000000000404028 D _edata
+0000000000404038 B _end
+0000000000401238 T _fini
+0000000000401000 T _init
+0000000000401050 T _start
+                 U ceil@@GLIBC_2.2.5
+0000000000404028 b completed.8061
+0000000000401090 t deregister_tm_clones
+0000000000401130 t frame_dummy
+0000000000404030 B gVar
+0000000000401180 T main
+                 U printf@@GLIBC_2.2.5
+00000000004010c0 t register_tm_clones
+0000000000401140 T set_var
+
+U ceil@@GLIBC_2.2.5: This shows that your program uses the ceil function, which is defined in the GLIBC library (version 2.2.5). The symbol type 'U' denotes that the symbol is undefined, which means that ceil is not defined in your program, but in an external library.
+
+U __libc_start_main@@GLIBC_2.2.5: This is the entry function for programs in the GNU C Library (GLIBC), used to perform any necessary setup and cleanup for your program.
+
+U printf@@GLIBC_2.2.5: This is the printf function, also from GLIBC.
+
+T main, T set_var, T _start: These are the main, set_var, and _start functions defined in your program. The 'T' denotes that these symbols are in the text (code) section of your program.
+
+B _end, B _edata, B __bss_start, D __TMC_END__: These symbols are used by the system to define the end of various sections of memory. For instance, _end marks the end of the initialized data segment.
+
+T _dl_relocate_static_pie, T _init, T _fini: These are special functions used by the dynamic linker for shared libraries and program initialization/finalization.
+
+t deregister_tm_clones, t __do_global_dtors_aux, t frame_dummy, t register_tm_clones: These are internal functions used by the compiler and runtime.
