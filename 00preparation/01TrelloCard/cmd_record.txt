@@ -1,4 +1,4 @@
-clang-13 -ffunction-sections -fdata-sections -lm -O3 -c -o main.o main.c
+clang-13 -ffunction-sections -fdata-sections -c -o main.o main.c
 
 llvm-objdump-13 -h main.o
 

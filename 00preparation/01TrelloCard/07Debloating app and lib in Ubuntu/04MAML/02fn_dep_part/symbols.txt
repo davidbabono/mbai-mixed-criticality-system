@@ -1,0 +1,3 @@
+.sharedlib._GLOBAL_OFFSET_TABLE_
+.sharedlib.lib1_func1
+.sharedlib.lib3_func1
