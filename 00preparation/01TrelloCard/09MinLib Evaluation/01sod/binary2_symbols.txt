@@ -1,0 +1,21 @@
+B __bss_start
+b completed.8061
+B _end
+__cxa_finalize 
+d __do_global_dtors_aux_fini_array_entry
+D __dso_handle
+d _DYNAMIC
+D _edata
+d __frame_dummy_init_array_entry
+d _GLOBAL_OFFSET_TABLE_
+D __TMC_END__
+_ITM_deregisterTMCloneTable 
+_ITM_registerTMCloneTable 
+main 
+r __FRAME_END__
+t deregister_tm_clones
+t __do_global_dtors_aux
+T _fini
+t frame_dummy
+T _init
+t register_tm_clones

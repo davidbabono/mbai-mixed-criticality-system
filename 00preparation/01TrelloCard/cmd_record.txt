@@ -34,6 +34,8 @@ gcc -ffunction-sections -fdata-sections -c -o main.o main.c
 gcc -ffunction-sections -fdata-sections -c -o testlib.o testlib.c
 ar rcs libfuncs.a testlib.o
 
+ld -r -o libab.o liba.o libb.o
+
 gcc -Wl,--gc-sections -o main main.o -L. -lfuncs -lm
 (gdb) set logging file mappings.txt
 (gdb) set logging on
